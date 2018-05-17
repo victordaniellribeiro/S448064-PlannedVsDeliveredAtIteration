@@ -1,0 +1,25 @@
+.app {
+     /* Add app styles here */
+
+    	
+}
+
+.attention .x-change-cell { 
+	background-color: #ffe2e2 !important; 
+	color: #900; 
+}
+
+.new-feature .x-change-cell { 
+	background-color: #c2d7f9 !important; 
+	color: #009; 
+}
+
+.completed .x-change-cell { 
+	background-color: #cdf9c2 !important; 
+	color: #090; 
+}
+	
+	
+
+
+
