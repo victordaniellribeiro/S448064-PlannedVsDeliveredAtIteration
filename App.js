@@ -126,7 +126,7 @@ Ext.define('CustomApp', {
             overflowY: 'auto',
             html: '<div style= "clear:both">' +
                 '<div style="background-color:#cdf9c2; width:20px; height:20px; margin:5px; float:left;"></div>' +
-                '<div style="height:20px; margin:5px; float:left;">Stories and Defects present at start date and at the end date with state <b>Completed</b>, <b>Accepted</b> or <b>Ready to Ship</b>.</div>' +
+                '<div style="height:20px; margin:5px; float:left;">Stories and Defects present at start date and at the end date with state <b>Accepted</b> or <b>Ready to Ship</b>.</div>' +
                 '</div>'
         }, {
             id: 'tooltipContent2',
@@ -382,7 +382,7 @@ Ext.define('CustomApp', {
                         planned = false;
                     }
 
-                    if (state == 'Completed' || state == 'Accepted' || state == 'Ready to Ship') {
+                    if (state == 'Accepted' || state == 'Ready to Ship') {
                         completed = true;
                     }
 
