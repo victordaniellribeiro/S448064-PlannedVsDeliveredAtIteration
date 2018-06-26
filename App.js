@@ -305,6 +305,7 @@ Ext.define('CustomApp', {
         });
     },
 
+
     _loadInitData: function() {
         console.log('loading init stories');
         //console.log('filters:', this.filtersInit);
@@ -331,10 +332,22 @@ Ext.define('CustomApp', {
         });
     },
 
+
     _loadEndData: function() {
         console.log('loading end stories');
         var store2 = Ext.create('Rally.data.lookback.SnapshotStore', {
-            fetch: ['Name', 'FormattedID', 'PlanEstimate', 'State', 'ScheduleState', 'PortfolioItem', 'Parent', "_ValidFrom", "_ValidTo", "TestCase"],
+            fetch: [
+                'Name', 
+                'FormattedID', 
+                'PlanEstimate', 
+                'State', 
+                'ScheduleState', 
+                'PortfolioItem', 
+                'Parent', 
+                "_ValidFrom", 
+                "_ValidTo", 
+                "TestCase",
+                'AcceptedDate'],
             filters: this.filtersEnd,
             limit: Infinity,
             autoLoad: true,
@@ -467,7 +480,8 @@ Ext.define('CustomApp', {
                         Planned: planned,
                         Parent: parent,
                         Completed: completed,
-                        PlanEstimate: record.get('PlanEstimate')
+                        PlanEstimate: record.get('PlanEstimate'),
+                        AcceptedDate: record.get('AcceptedDate')
 
                     });
                 }, this);
@@ -683,6 +697,12 @@ Ext.define('CustomApp', {
             }, {
                 text: 'State',
                 dataIndex: 'State',
+                tdCls: 'x-change-cell'
+            }, {
+                text: 'Accepted Date',
+                dataIndex: 'AcceptedDate',
+                xtype: 'datecolumn',
+                format   : 'm/d/Y',
                 tdCls: 'x-change-cell'
             }],
             viewConfig: {
